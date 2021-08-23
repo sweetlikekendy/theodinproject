@@ -1,0 +1,23 @@
+{
+  "name": "theodinproject",
+  "version": "1.0.0",
+  "description": "The Odin Project JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sweetlikekendy/theodinproject.git"
+  },
+  "author": "Kendy Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sweetlikekendy/theodinproject/issues"
+  },
+  "homepage": "https://github.com/sweetlikekendy/theodinproject#readme",
+  "dependencies": {
+    "node": "^16.6.1",
+    "nodemon": "^2.0.12"
+  }
+}
