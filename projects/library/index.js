@@ -70,6 +70,7 @@ const resetBooksList = () => {
 
 const createBookCard = (book) => {
   const bookCard = document.createElement("div")
+  const bookCardDiv = document.createElement("div")
   const title = document.createElement("h3")
   const author = document.createElement("h3")
   const pages = document.createElement("h3")
@@ -94,11 +95,12 @@ const createBookCard = (book) => {
 
   readBtn.onclick = toggleRead
 
-  bookCard.appendChild(title)
-  bookCard.appendChild(author)
-  bookCard.appendChild(pages)
-  bookCard.appendChild(readBtn)
-  bookCard.appendChild(removeBtn)
+  bookCardDiv.appendChild(title)
+  bookCardDiv.appendChild(author)
+  bookCardDiv.appendChild(pages)
+  bookCardDiv.appendChild(readBtn)
+  bookCardDiv.appendChild(removeBtn)
+  bookCard.appendChild(bookCardDiv)
   booksList.appendChild(bookCard)
 }
 

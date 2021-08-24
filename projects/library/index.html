@@ -9,33 +9,35 @@
     <script src="index.js" defer></script>
   </head>
   <body>
-    <div class="book-form">
-      <form class="add-book-form" id="add-book-form">
-        <p class="error-msg" id="errorMsg"></p>
-        <div class="book-title-input">
-          <label for="book-title">Book Title</label>
-          <input id="book-title" type="text" name="book-title" required />
-        </div>
-        <div class="book-author-input">
-          <label for="book-author">Book Author</label>
-          <input id="book-author" type="text" name="book-author" required />
-        </div>
-        <div class="book-pages-input">
-          <label for="book-pages">Book Pages</label>
-          <input id="book-pages" type="number" name="book-pages" required />
-        </div>
-        <div class="book-isRead-input">
-          <label for="book-isRead">Finished Reading Book?</label>
-          <input
-            id="book-isRead"
-            type="checkbox"
-            name="book-isRead"
-            required`
-          />
-        </div>
-        <button class="btn" type="submit">Add To library</button>
-      </form>
-    </div>
-    <div id="book-list" class="book-list"></div>
+    <main>
+      <div class="book-form">
+        <form class="add-book-form" id="add-book-form">
+          <p class="error-msg" id="errorMsg"></p>
+          <div class="book-title-input">
+            <label for="book-title">Book Title</label>
+            <input id="book-title" type="text" name="book-title" required />
+          </div>
+          <div class="book-author-input">
+            <label for="book-author">Book Author</label>
+            <input id="book-author" type="text" name="book-author" required />
+          </div>
+          <div class="book-pages-input">
+            <label for="book-pages">Book Pages</label>
+            <input id="book-pages" type="number" name="book-pages" required />
+          </div>
+          <div class="book-isRead-input">
+            <label for="book-isRead">Finished Reading Book?</label>
+            <input
+              id="book-isRead"
+              type="checkbox"
+              name="book-isRead"
+              required`
+            />
+          </div>
+          <button class="btn" type="submit">Add To library</button>
+        </form>
+      </div>
+      <div id="book-list" class="book-list"></div>
+    </main>
   </body>
 </html>
