@@ -86,6 +86,7 @@ const gameController = (() => {
     ]
 
     for (let condition of winConditions) {
+      console.log(condition)
       const index1 = condition[0],
         index2 = condition[1],
         index3 = condition[2]
@@ -96,7 +97,6 @@ const gameController = (() => {
       ) {
         return true
       }
-      return false
     }
 
     const isEqualToPlayerSymbol = (currentValue) =>
