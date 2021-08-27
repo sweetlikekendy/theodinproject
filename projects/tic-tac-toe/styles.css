@@ -350,44 +350,8 @@ template {
   display: none;
 }
 
-/* Roboto regular */
-
-@font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto-Regular.eot");
-  src: url("/fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/Roboto-Regular.woff2") format("woff2"),
-    url("/fonts/Roboto-Regular.woff") format("woff"),
-    url("/fonts/Roboto-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Roboto italic */
-
-@font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto-Italic.eot");
-  src: url("/fonts/Roboto-Italic.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/Roboto-Italic.woff2") format("woff2"),
-    url("/fonts/Roboto-Italic.woff") format("woff"),
-    url("/fonts/Roboto-Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-}
-
-/* Roboto bold */
-
-@font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto-Bold.eot");
-  src: url("/fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/Roboto-Bold.woff2") format("woff2"),
-    url("/fonts/Roboto-Bold.woff") format("woff"),
-    url("/fonts/Roboto-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
+/* import Roboto regular and Verela Round Regular*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap");
 
 :root {
   --margin-bottom-small: 1rem;
@@ -398,11 +362,12 @@ template {
   --border-color: #374151;
   --header-bg-color: #0d9488;
   --header-text-color: #f9fafb;
-  --grid-item-bg-color: #e2e8f0;
-  --grid-item-hover-bg-color: #94a3b8;
-  --grid-item-size-small: 90px;
-  --grid-item-size-medium: 150px;
-  --grid-item-size-large: 200px;
+  --gameboard-font-color: #475569;
+  --gameboard-tile-bg-color: #e2e8f0;
+  --gameboard-tile-hover-bg-color: #94a3b8;
+  --gameboard-tile-size-small: 90px;
+  --gameboard-tile-size-medium: 150px;
+  --gameboard-tile-size-large: 200px;
   --btn-reset-font-size-small: 24px;
   --btn-reset-font-size-medium: 32px;
   --btn-reset-font-size-large: 48px;
@@ -446,27 +411,32 @@ header {
   margin-bottom: var(--margin-bottom-small);
 }
 
-.playing-grid {
+.gameboard {
   margin-bottom: var(--margin-bottom-small);
   display: grid;
-  grid-template-columns: repeat(3, var(--grid-item-size-small));
-  grid-template-rows: repeat(3, var(--grid-item-size-small));
+  grid-template-columns: repeat(3, var(--gameboard-tile-size-small));
+  grid-template-rows: repeat(3, var(--gameboard-tile-size-small));
   justify-content: center;
   align-items: center;
+  font-family: "Varela Round";
+  font-size: 48px;
+  color: var(--gameboard-font-color);
 }
 
-.playing-grid-item {
-  width: var(--grid-item-size-small);
-  height: var(--grid-item-size-small);
-  background-color: var(--grid-item-bg-color);
+.gameboard-tile {
+  position: relative;
+  width: var(--gameboard-tile-size-small);
+  height: var(--gameboard-tile-size-small);
+  background-color: var(--gameboard-tile-bg-color);
   align-self: center;
   justify-self: center;
   border: var(--border-size) solid var(--border-color);
-  cursor: pointer;
 }
 
-.playing-grid-item:hover {
-  background-color: var(--grid-item-hover-bg-color);
+.btn-reset:hover,
+.gameboard-tile:hover {
+  background-color: var(--gameboard-tile-hover-bg-color);
+  cursor: pointer;
 }
 
 .btn-reset {
@@ -481,23 +451,28 @@ header {
     padding: 1rem 2rem;
   }
 
+  .message {
+    font-size: 2.25rem;
+  }
+
   .player-description {
     margin-bottom: var(--margin-bottom-medium);
   }
 
   .tic-tac-toe {
-    margin: 6rem auto;
+    margin: 3rem auto;
   }
 
-  .playing-grid {
+  .gameboard {
     margin-bottom: var(--margin-bottom-medium);
-    grid-template-columns: repeat(3, var(--grid-item-size-medium));
-    grid-template-rows: repeat(3, var(--grid-item-size-medium));
+    grid-template-columns: repeat(3, var(--gameboard-tile-size-medium));
+    grid-template-rows: repeat(3, var(--gameboard-tile-size-medium));
+    font-size: 74px;
   }
 
-  .playing-grid-item {
-    width: var(--grid-item-size-medium);
-    height: var(--grid-item-size-medium);
+  .gameboard-tile {
+    width: var(--gameboard-tile-size-medium);
+    height: var(--gameboard-tile-size-medium);
   }
 
   .btn-reset {
@@ -510,19 +485,24 @@ header {
     margin-bottom: var(--margin-bottom-large);
   }
 
+  .message {
+    font-size: 3rem;
+  }
+
   .player-description {
     margin-bottom: var(--margin-bottom-large);
   }
 
-  .playing-grid {
+  .gameboard {
     margin-bottom: var(--margin-bottom-large);
-    grid-template-columns: repeat(3, var(--grid-item-size-large));
-    grid-template-rows: repeat(3, var(--grid-item-size-large));
+    grid-template-columns: repeat(3, var(--gameboard-tile-size-large));
+    grid-template-rows: repeat(3, var(--gameboard-tile-size-large));
+    font-size: 132px;
   }
 
-  .playing-grid-item {
-    width: var(--grid-item-size-large);
-    height: var(--grid-item-size-large);
+  .gameboard-tile {
+    width: var(--gameboard-tile-size-large);
+    height: var(--gameboard-tile-size-large);
   }
 
   .btn-reset {
