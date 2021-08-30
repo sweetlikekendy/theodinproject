@@ -47,6 +47,7 @@ const gameController = (() => {
   const playRound = (index) => {
     gameboard.setTile(index, getCurrentPlayerSymbol())
 
+    console.log(checkWinner())
     if (checkWinner(index)) {
       displayController.setMessageElement(
         `Player ${getCurrentPlayerSymbol()} has won!`
@@ -86,18 +87,20 @@ const gameController = (() => {
     ]
 
     for (let condition of winConditions) {
-      console.log(condition)
       const index1 = condition[0],
         index2 = condition[1],
         index3 = condition[2]
-      if (
-        gameboard.getTile(index1) !== "" &&
-        gameboard.getTile(index1) === gameboard.getTile(index2) &&
-        gameboard.getTile(index2) === gameboard.getTile(index3)
-      ) {
+
+      const val1 = gameboard.getTile(index1),
+        val2 = gameboard.getTile(index2),
+        val3 = gameboard.getTile(index3)
+
+      if (val1 !== "" && val1 === val2 && val2 === val3) {
         return true
       }
     }
+
+    return false
 
     const isEqualToPlayerSymbol = (currentValue) =>
       currentValue === getCurrentPlayerSymbol()
