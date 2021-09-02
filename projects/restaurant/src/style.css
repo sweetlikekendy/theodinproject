@@ -360,7 +360,7 @@ body {
   padding: 0 1rem;
 }
 
-header,
+nav,
 footer {
   display: flex;
   justify-content: space-around;
@@ -378,6 +378,32 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Styling  */
+
+/* keep footer at the bottom of the page relative to viewport & content */
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* keep footer at the bottom of the page relative to viewport & content */
+.site-content {
+  flex: 1;
+}
+
+.button-nav {
+  font-weight: 700;
+  padding: 1rem;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+.active-button-nav {
+  background-color: greenyellow;
 }
 
 .site-title {
@@ -413,7 +439,7 @@ footer {
 }
 
 @media screen and (min-width: 640px) {
-  header,
+  nav,
   footer {
     margin: 2rem 0;
   }
@@ -423,10 +449,16 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  header,
+  .button-nav:hover {
+    background-color: honeydew;
+  }
+  nav,
   footer {
     margin: 3rem 0;
   }
